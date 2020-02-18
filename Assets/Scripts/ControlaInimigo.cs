@@ -8,6 +8,7 @@ public class ControlaInimigo : MonoBehaviour {
     public float Velocidade = 5;
     private Rigidbody rigidbodyInimigo;
     private Animator animatorInimigo;
+    //public int Dano = 30;
 
     // Use this for initialization
     void Start () {
@@ -50,8 +51,10 @@ public class ControlaInimigo : MonoBehaviour {
 
     void AtacaJogador ()
     {
-        Time.timeScale = 0;
+        int dano = Random.Range(20, 30);
+        Jogador.GetComponent<ControlaJogador>().TomarDano(dano);
+        /*Time.timeScale = 0;
         Jogador.GetComponent<ControlaJogador>().TextoGameOver.SetActive(true);
-        Jogador.GetComponent<ControlaJogador>().Vivo = false;
+        Jogador.GetComponent<ControlaJogador>().Vivo = false;*/
     }
 }
