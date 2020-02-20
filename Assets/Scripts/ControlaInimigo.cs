@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlaInimigo : MonoBehaviour {
+public class ControlaInimigo : MonoBehaviour,IMatavel {
 
     public GameObject Jogador;
-    public float Velocidade = 5;
-    private Rigidbody rigidbodyInimigo;
-    private Animator animatorInimigo;
+    private MovimentoPersonagem movimentoInimigo;
+    private AnimacaoPersonagem animacaoInimigo;
+    private Status statusInimigo;
+    public AudioClip SomDeMorte;
     //public int Dano = 30;
 
     // Use this for initialization
     void Start () {
         Jogador = GameObject.FindWithTag("Jogador");
-        int geraTipoZumbi = Random.Range(1, 28);
+        
 
-        transform.GetChild(geraTipoZumbi).gameObject.SetActive(true);
-
-        rigidbodyInimigo = GetComponent<Rigidbody>();
-        animatorInimigo = GetComponent<Animator>();
+        movimentoInimigo = GetComponent<MovimentoPersonagem>();
+        animacaoInimigo = GetComponent<AnimacaoPersonagem>();
+        AleatorizarZumbi();
+        statusInimigo = GetComponent<Status>();
     }
 	
 	// Update is called once per frame
@@ -32,20 +33,17 @@ public class ControlaInimigo : MonoBehaviour {
 
         Vector3 direcao = Jogador.transform.position - transform.position;
 
-        Quaternion novaRotacao = Quaternion.LookRotation(direcao);
-        rigidbodyInimigo.MoveRotation(novaRotacao);
+        movimentoInimigo.Rotacionar(direcao);
 
         if (distancia > 2.5)
         {
-            rigidbodyInimigo.MovePosition(
-                rigidbodyInimigo.position +
-                direcao.normalized * Velocidade * Time.deltaTime);
+            movimentoInimigo.Movimentar(direcao, statusInimigo.Velocidade);
 
-            animatorInimigo.SetBool("Atacando", false);
+            animacaoInimigo.Atacar(false);
         }
         else
         {
-            animatorInimigo.SetBool("Atacando", true);
+            animacaoInimigo.Atacar(true);
         }
     }
 
@@ -53,8 +51,26 @@ public class ControlaInimigo : MonoBehaviour {
     {
         int dano = Random.Range(20, 30);
         Jogador.GetComponent<ControlaJogador>().TomarDano(dano);
-        /*Time.timeScale = 0;
-        Jogador.GetComponent<ControlaJogador>().TextoGameOver.SetActive(true);
-        Jogador.GetComponent<ControlaJogador>().Vivo = false;*/
+    }
+
+    void AleatorizarZumbi()
+    {
+        int geraTipoZumbi = Random.Range(1, 28);
+        transform.GetChild(geraTipoZumbi).gameObject.SetActive(true);
+    }
+
+    public void TomarDano(int dano)
+    {
+        statusInimigo.Vida -= dano;
+        if(statusInimigo.Vida <= 0)
+        {
+            Morrer();
+        }
+    }
+
+    public void Morrer()
+    {
+        Destroy(gameObject);
+        ControlaAudio.instancia.PlayOneShot(SomDeMorte);
     }
 }
