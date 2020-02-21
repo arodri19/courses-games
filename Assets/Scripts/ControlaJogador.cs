@@ -15,10 +15,11 @@ public class ControlaJogador : MonoBehaviour, IMatavel
     private AnimacaoPersonagem animacaojogador;
     public Status statusJogador;
 
-    void Awake()
+    private void Awake()
     {
         statusJogador = GetComponent<Status>();
     }
+
     private void Start()
     {
         Time.timeScale = 1;
