@@ -21,7 +21,9 @@ public class GeradorZumbis : MonoBehaviour
     void Update()
     {
 
-        if(Vector3.Distance(transform.position, jogador.transform.position) > distanciaDeGeracao)
+        GameObject[] zumbis = GameObject.FindGameObjectsWithTag("Inimigo");
+
+        if(Vector3.Distance(transform.position, jogador.transform.position) > distanciaDoJogadorParaGeracao && zumbis.Length <= 20)
         {
             contadorTempo += Time.deltaTime;
 

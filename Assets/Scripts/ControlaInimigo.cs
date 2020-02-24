@@ -46,12 +46,16 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
         } else if (distancia > 2.5)
         {
             direcao = Jogador.transform.position - transform.position;
+
+
             movimentoInimigo.Movimentar(direcao, statusInimigo.Velocidade);
 
             animacaoInimigo.Atacar(false);
         }
         else
         {
+            direcao = Jogador.transform.position - transform.position;
+
             animacaoInimigo.Atacar(true);
         }
     }
