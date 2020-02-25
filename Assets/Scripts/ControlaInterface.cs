@@ -12,6 +12,8 @@ public class ControlaInterface : MonoBehaviour
     public Text textoTempoDeSobrevivencia;
     public Text TextoPontuacaoMaxima;
     private float tempoPontuacaoSalvo;
+    private int quantidadeDeZumbisMortos;
+    public Text TextoQuantidadeDeZumbisMortos;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,12 @@ public class ControlaInterface : MonoBehaviour
 
         }
 
+    }
+
+    public void atualizarQuantidadeDeZumbisMortos()
+    {
+        quantidadeDeZumbisMortos++;
+        TextoQuantidadeDeZumbisMortos.text = string.Format("X {0}", quantidadeDeZumbisMortos); 
     }
 
     public void Reiniciar()

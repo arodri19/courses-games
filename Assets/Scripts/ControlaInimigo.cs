@@ -15,6 +15,7 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
     private float tempoEntrePosicoesAleatorias = 4;
     private float porcentagemGerarKitMedico = 0.1f;
     public GameObject KitMedicoPrefab;
+    private ControlaInterface scriptControlaInterface;
     //public int Dano = 30;
 
     // Use this for initialization
@@ -26,6 +27,7 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
         animacaoInimigo = GetComponent<AnimacaoPersonagem>();
         AleatorizarZumbi();
         statusInimigo = GetComponent<Status>();
+        scriptControlaInterface = GameObject.FindObjectOfType(typeof(ControlaInterface)) as ControlaInterface;
     }
 	
 	// Update is called once per frame
@@ -88,6 +90,7 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
         Destroy(gameObject);
         ControlaAudio.instancia.PlayOneShot(SomDeMorte);
         VerificarGeracaoKitMedico(porcentagemGerarKitMedico);
+        scriptControlaInterface.atualizarQuantidadeDeZumbisMortos();
     }
 
     void VerificarGeracaoKitMedico(float porcentagemGeracao)
