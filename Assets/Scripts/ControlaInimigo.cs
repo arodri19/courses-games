@@ -13,6 +13,8 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
     private Vector3 direcao;
     private float contadorVagar;
     private float tempoEntrePosicoesAleatorias = 4;
+    private float porcentagemGerarKitMedico = 0.1f;
+    public GameObject KitMedicoPrefab;
     //public int Dano = 30;
 
     // Use this for initialization
@@ -85,6 +87,15 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
     {
         Destroy(gameObject);
         ControlaAudio.instancia.PlayOneShot(SomDeMorte);
+        VerificarGeracaoKitMedico(porcentagemGerarKitMedico);
+    }
+
+    void VerificarGeracaoKitMedico(float porcentagemGeracao)
+    {
+        if (Random.value <= porcentagemGeracao)
+        {
+            Instantiate(KitMedicoPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     void Vagar()
