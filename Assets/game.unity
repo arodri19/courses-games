@@ -8716,6 +8716,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487072786}
     m_Modifications:
+    - target: {fileID: 1477576894, guid: 32356e952c0244709bdf91f6f35489fd, type: 3}
+      propertyPath: m_Size.z
+      value: 15.419863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477576894, guid: 32356e952c0244709bdf91f6f35489fd, type: 3}
+      propertyPath: m_Center.x
+      value: 0.80443764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477576894, guid: 32356e952c0244709bdf91f6f35489fd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.45520973
+      objectReference: {fileID: 0}
     - target: {fileID: 1996280192660208, guid: 32356e952c0244709bdf91f6f35489fd, type: 3}
       propertyPath: m_Name
       value: LojaFerramentas_Destruido
@@ -11924,6 +11936,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487072786}
     m_Modifications:
+    - target: {fileID: 2056686840, guid: ae496fdd48ee74085a352093ba11440e, type: 3}
+      propertyPath: m_Size.x
+      value: 27.756323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056686840, guid: ae496fdd48ee74085a352093ba11440e, type: 3}
+      propertyPath: m_Center.x
+      value: -0.12035799
+      objectReference: {fileID: 0}
     - target: {fileID: 1146885078229164, guid: ae496fdd48ee74085a352093ba11440e, type: 3}
       propertyPath: m_Name
       value: Restaurante_Destruido
