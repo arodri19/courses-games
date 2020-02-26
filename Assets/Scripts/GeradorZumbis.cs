@@ -13,7 +13,7 @@ public class GeradorZumbis : MonoBehaviour
     private GameObject jogador;
     private int quantidadeMaximaDeZumbisVivos = 5;
     private int quantidadeDeZumbisVivos = 0;
-    private float tempoProximoAumentoDeDificuldade = 30;
+    private float tempoProximoAumentoDeDificuldade = 5;
     private float contadorDeAumentarDificuldade;
 
     private void Start()
@@ -48,7 +48,7 @@ public class GeradorZumbis : MonoBehaviour
         
         if(Time.timeSinceLevelLoad > contadorDeAumentarDificuldade)
         {
-            quantidadeDeZumbisVivos++;
+            quantidadeMaximaDeZumbisVivos++;
             contadorDeAumentarDificuldade = Time.timeSinceLevelLoad + tempoProximoAumentoDeDificuldade;
         }
 
