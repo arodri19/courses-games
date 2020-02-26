@@ -24,5 +24,10 @@ public class MovimentoPersonagem : MonoBehaviour
         meuRigidbody.MoveRotation(novaRotacao);
     }
 
-    
+    public void Morrer()
+    {
+        meuRigidbody.constraints = RigidbodyConstraints.None;
+        meuRigidbody.velocity = Vector3.zero;
+        GetComponent<Collider>().enabled = false;
+    }
 }
