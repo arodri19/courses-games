@@ -12201,8 +12201,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2671780822599665034, guid: 12d1d9831aea77f48bb665667c41d36c,
+        type: 3}
+      propertyPath: VidaInicial
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2671780822599665034, guid: 12d1d9831aea77f48bb665667c41d36c,
+        type: 3}
+      propertyPath: Velocidade
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 863662745, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1063500868937916, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
       propertyPath: m_Name
+      value: ChefeDeFase
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063500868937916, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
+      propertyPath: m_TagString
       value: ChefeDeFase
       objectReference: {fileID: 0}
     - target: {fileID: 4941635705825534, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
@@ -12248,6 +12266,11 @@ PrefabInstance:
     - target: {fileID: 4941635705825534, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54163392757231022, guid: 12d1d9831aea77f48bb665667c41d36c,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12d1d9831aea77f48bb665667c41d36c, type: 3}
