@@ -10,6 +10,7 @@ public class ControlaChefe : MonoBehaviour, IMatavel
     private Status statusChefe;
     private AnimacaoPersonagem animacaoChefe;
     private MovimentoPersonagem movimentoChefe;
+    public GameObject kitMedicoPrefab;
 
     private void Start()
     {
@@ -65,6 +66,7 @@ public class ControlaChefe : MonoBehaviour, IMatavel
         movimentoChefe.Morrer();
         this.enabled = false;
         agente.enabled = false;
+        Instantiate(kitMedicoPrefab,transform.position,Quaternion.identity);
         Destroy(gameObject, 2);
     }
 }

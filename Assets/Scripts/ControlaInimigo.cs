@@ -74,7 +74,7 @@ public class ControlaInimigo : MonoBehaviour,IMatavel {
 
     void AleatorizarZumbi()
     {
-        int geraTipoZumbi = Random.Range(1, 28);
+        int geraTipoZumbi = Random.Range(1, transform.childCount);
         transform.GetChild(geraTipoZumbi).gameObject.SetActive(true);
     }
 
