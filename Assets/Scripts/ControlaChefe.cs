@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ControlaChefe : MonoBehaviour, IMatavel
 {
@@ -10,8 +11,10 @@ public class ControlaChefe : MonoBehaviour, IMatavel
     private Status statusChefe;
     private AnimacaoPersonagem animacaoChefe;
     private MovimentoPersonagem movimentoChefe;
-    public GameObject kitMedicoPrefab;
-
+    public GameObject KitMedicoPrefab;
+    public Slider SliderVidaChefe;
+    public Image ImagemSlider;
+    public Color CorDaVidaMaxima, CorDaVidaMinima;
     private void Start()
     {
         jogador = GameObject.FindWithTag("Jogador").transform;
@@ -20,6 +23,9 @@ public class ControlaChefe : MonoBehaviour, IMatavel
         agente.speed = statusChefe.Velocidade;
         animacaoChefe = GetComponent<AnimacaoPersonagem>();
         movimentoChefe = GetComponent<MovimentoPersonagem>();
+        SliderVidaChefe.maxValue = statusChefe.VidaInicial;
+        AtualizarInterface();
+
     }
 
     private void Update()
@@ -54,7 +60,8 @@ public class ControlaChefe : MonoBehaviour, IMatavel
     public void TomarDano(int dano)
     {
         statusChefe.Vida -= dano;
-        if(statusChefe.Vida <= 0)
+        AtualizarInterface();
+        if (statusChefe.Vida <= 0)
         {
             Morrer();
         }
@@ -66,7 +73,15 @@ public class ControlaChefe : MonoBehaviour, IMatavel
         movimentoChefe.Morrer();
         this.enabled = false;
         agente.enabled = false;
-        Instantiate(kitMedicoPrefab,transform.position,Quaternion.identity);
+        Instantiate(KitMedicoPrefab,transform.position,Quaternion.identity);
         Destroy(gameObject, 2);
+    }
+
+    void AtualizarInterface()
+    {
+        SliderVidaChefe.value = statusChefe.Vida;
+        float porcentagemDaVida = (float)statusChefe.Vida / (float)statusChefe.VidaInicial;
+        Color corDaVida = Color.Lerp(CorDaVidaMinima,CorDaVidaMaxima,porcentagemDaVida);
+        ImagemSlider.color = corDaVida;
     }
 }
