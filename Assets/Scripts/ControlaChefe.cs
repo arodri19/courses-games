@@ -15,6 +15,7 @@ public class ControlaChefe : MonoBehaviour, IMatavel
     public Slider SliderVidaChefe;
     public Image ImagemSlider;
     public Color CorDaVidaMaxima, CorDaVidaMinima;
+    public GameObject ParticulaSangueChefe;
     private void Start()
     {
         jogador = GameObject.FindWithTag("Jogador").transform;
@@ -65,6 +66,11 @@ public class ControlaChefe : MonoBehaviour, IMatavel
         {
             Morrer();
         }
+    }
+
+    public void ParticulaSangue(Vector3 posicao, Quaternion rotacao)
+    {
+        Instantiate(ParticulaSangueChefe, posicao, rotacao);
     }
 
     public void Morrer()

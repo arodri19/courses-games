@@ -640,6 +640,8 @@ MonoBehaviour:
   KitMedicoPrefab: {fileID: 1060151288946202, guid: 6150c6f66b7034ec5b3672478195682a,
     type: 3}
   meuGerador: {fileID: 0}
+  ParticulaSangueZumbi: {fileID: 4178394544299510305, guid: 786fc6a0b6ef52a4b8dc65aa4fb334bc,
+    type: 3}
 --- !u!54 &54163392757231022
 Rigidbody:
   m_ObjectHideFlags: 0
