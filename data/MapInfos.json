@@ -1,0 +1,21 @@
+[
+null,
+{"id":1,"expanded":true,"name":"Mapa de exemplo","order":1,"parentId":0,"scrollX":423.2,"scrollY":357.6},
+{"id":2,"expanded":false,"name":"Tutorial de Mapeamento","order":2,"parentId":0,"scrollX":423.2,"scrollY":390.4},
+{"id":3,"expanded":false,"name":"Mina","order":4,"parentId":2,"scrollX":982.4,"scrollY":584},
+{"id":4,"expanded":false,"name":"Masmorra ","order":3,"parentId":2,"scrollX":472.8,"scrollY":264},
+{"id":5,"expanded":true,"name":"Mapa com entrada e saida","order":5,"parentId":2,"scrollX":392.8,"scrollY":233.6},
+{"id":6,"expanded":true,"name":"Mapa sem entrada e saida","order":6,"parentId":2,"scrollX":392.8,"scrollY":233.6},
+{"id":7,"expanded":false,"name":"Rotas do jogador","order":7,"parentId":2,"scrollX":841.7142857142857,"scrollY":500.57142857142856},
+{"id":8,"expanded":true,"name":"Mapeamento com shift MV","order":8,"parentId":2,"scrollX":0,"scrollY":0},
+{"id":9,"expanded":false,"name":"Mapeamento com camadas","order":9,"parentId":2,"scrollX":0,"scrollY":0},
+{"id":10,"expanded":false,"name":"MAP010","order":10,"parentId":2,"scrollX":0,"scrollY":0},
+{"id":11,"expanded":true,"name":"Eventos - Básico","order":11,"parentId":0,"scrollX":0,"scrollY":0},
+{"id":12,"expanded":true,"name":"Floresta -  Entrada","order":13,"parentId":18,"scrollX":589.1999999999999,"scrollY":360},
+{"id":13,"expanded":false,"name":"Floresta - Clareira","order":14,"parentId":18,"scrollX":0,"scrollY":0},
+{"id":14,"expanded":false,"name":"Floresta - Saída","order":16,"parentId":18,"scrollX":0,"scrollY":0},
+{"id":15,"expanded":false,"name":"Cabaninha","order":17,"parentId":18,"scrollX":589.1999999999999,"scrollY":360},
+{"id":16,"expanded":false,"name":"Casa 1","order":18,"parentId":15,"scrollX":598.8,"scrollY":408},
+{"id":17,"expanded":false,"name":"Cabana - Interior","order":15,"parentId":13,"scrollX":0,"scrollY":0},
+{"id":18,"expanded":false,"name":"Mapa Mundi","order":12,"parentId":11,"scrollX":589.1999999999999,"scrollY":360}
+]
